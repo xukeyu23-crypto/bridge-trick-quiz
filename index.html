@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>桥牌第一关：谁赢这一墩？</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="home-screen" class="screen is-active">
+      <div class="brand-mark">Bridge 01</div>
+      <h1>桥牌第一关：谁赢这一墩？</h1>
+      <p class="intro">
+        看四位玩家各出的一张牌，找出这一墩的赢家。记住：首出花色决定比较范围，A 最大，2 最小。
+      </p>
+      <button id="start-button" class="primary-button">开始测试</button>
+      <div class="rule-card">
+        <span>无将牌基础规则</span>
+        <strong>只比较首出花色里的牌</strong>
+      </div>
+    </section>
+
+    <section id="quiz-screen" class="screen" aria-live="polite">
+      <header class="quiz-header">
+        <div>
+          <span class="eyebrow">第 <b id="question-number">1</b> / 10 题</span>
+          <h2 id="question-title">谁赢这一墩？</h2>
+        </div>
+        <div class="score-pill">已对 <span id="live-score">0</span></div>
+      </header>
+
+      <div class="trick-table" aria-label="四方位出牌">
+        <div class="seat north">
+          <span>北</span>
+          <div id="card-north" class="card"></div>
+        </div>
+        <div class="seat west">
+          <span>西</span>
+          <div id="card-west" class="card"></div>
+        </div>
+        <div class="center-note">
+          <span id="lead-suit">首出花色</span>
+        </div>
+        <div class="seat east">
+          <span>东</span>
+          <div id="card-east" class="card"></div>
+        </div>
+        <div class="seat south">
+          <span>南</span>
+          <div id="card-south" class="card"></div>
+        </div>
+      </div>
+
+      <div class="answer-area">
+        <p class="choice-label">选择赢家</p>
+        <div id="choices" class="choices"></div>
+      </div>
+
+      <article id="feedback" class="feedback" hidden>
+        <h3 id="feedback-title"></h3>
+        <p id="feedback-answer"></p>
+        <p id="feedback-explanation"></p>
+        <button id="next-button" class="primary-button">下一题</button>
+      </article>
+    </section>
+
+    <section id="result-screen" class="screen">
+      <div class="brand-mark">完成</div>
+      <h2>你的第一关成绩</h2>
+      <p id="final-score" class="final-score"></p>
+      <p id="final-message" class="final-message"></p>
+      <button id="restart-button" class="primary-button">再玩一次</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
